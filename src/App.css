@@ -1,0 +1,803 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --gsc-navy: #0d1240;
+  --gsc-blue: #1c2a78;
+  --gsc-blue-light: #2c3a94;
+  --gsc-red: #e51837;
+  --gsc-white: #ffffff;
+  --gsc-off-white: #f4f6f9;
+  --gsc-text: #172033;
+  --gsc-muted: #667085;
+  --gsc-border: rgba(7, 27, 59, 0.12);
+  --page-width: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mites-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--gsc-white);
+  color: var(--gsc-text);
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.page-width {
+  width: min(calc(100% - 64px), var(--page-width));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eyebrow--dark {
+  color: var(--gsc-red);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: stretch;
+  background: var(--gsc-navy);
+  isolation: isolate;
+}
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 16, 36, 0.97) 0%,
+      rgba(4, 16, 36, 0.91) 34%,
+      rgba(4, 16, 36, 0.58) 61%,
+      rgba(4, 16, 36, 0.21) 100%
+    );
+
+  background-position: center;
+  background-size: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.06) 60%,
+      rgba(3, 15, 34, 0.62) 100%
+    );
+}
+
+.hero__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.hero__copy {
+  width: min(100%, 670px);
+}
+
+.hero__logo {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+}
+
+.hero__age-card {
+  position: relative;
+  width: 205px;
+  height: 230px;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  background: rgba(7, 27, 59, 0.59);
+  color: white;
+
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.hero__age-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 48px;
+  height: 4px;
+  background: var(--gsc-red);
+}
+
+.hero__age-label,
+.hero__age-subtext {
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.hero__age-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero__age-card strong {
+  margin: 3px 0 0;
+
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 5.8rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.hero__age-subtext {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    var(--gsc-red) 0 24%,
+    rgba(255, 255, 255, 0.12) 24% 100%
+  );
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.program-intro {
+  padding: 105px 0 110px;
+  background: var(--gsc-white);
+}
+
+.program-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(60px, 8vw, 120px);
+  align-items: start;
+}
+
+.section-heading h2,
+.development__title,
+.practice__heading h2 {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  max-width: 510px;
+  color: var(--gsc-navy);
+  font-size: clamp(3.4rem, 6vw, 5.5rem);
+  letter-spacing: 0.015em;
+  line-height: 0.91;
+}
+
+.section-heading h2 span {
+  display: block;
+  color: var(--gsc-red);
+}
+
+.program-intro__copy {
+  padding-top: 28px;
+}
+
+.program-intro__copy p {
+  margin: 0;
+
+  color: #485268;
+  font-size: 1.29rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   DEVELOPMENT PATH
+========================================= */
+
+.development {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: var(--gsc-navy);
+  color: white;
+}
+
+.development__grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(320px, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.development__title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 48px;
+
+  color: white;
+  font-size: clamp(1.35rem, 5.5vw, 5.4rem);
+  letter-spacing: 0.02em;
+  line-height: 0.92;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.development__header {
+  text-align: right;
+}
+
+.development__intro {
+  max-width: 600px;
+  margin: 4px 0 0 auto;
+
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 1.23rem;
+  line-height: 1.75;
+}
+
+.development__levels {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.level-wrapper {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+}
+
+.level-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 190px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.29);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.level-card__letter {
+  flex: 1;
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 4.6rem;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.level-wrapper:last-child .level-card__letter {
+  color: var(--gsc-red);
+}
+
+.level-card__info {
+  text-align: center;
+}
+
+.level-card__info h3 {
+  margin: 0 0 4px;
+
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.level-card__info p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.level-connector {
+  width: 28px;
+  flex: 0 0 28px;
+
+  display: flex;
+  align-items: center;
+}
+
+.level-connector span {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.23);
+}
+
+.level-connector svg {
+  width: 14px;
+  height: 14px;
+  margin-left: -1px;
+
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+
+/* =========================================
+   PRACTICE
+========================================= */
+
+.development__practice {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 70px;
+  margin-top: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.practice__heading {
+  text-align: center;
+}
+
+.practice__heading h2 {
+  color: white;
+  font-size: clamp(3.5rem, 6vw, 5.3rem);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
+.practice__cards {
+  width: min(100%, 760px);
+  margin: 56px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.practice-card {
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+.practice-card:hover {
+  border-color: rgba(255, 255, 255, 0.29);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.practice-card__team {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.practice-card__frequency {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.practice-card__frequency strong {
+  color: white;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 5.2rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 0.8;
+}
+
+.practice-card__frequency strong span {
+  position: relative;
+  top: -0.22em;
+
+  color: var(--gsc-red);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 0.5em;
+}
+
+.practice-card__frequency strong em {
+  margin-left: 2px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.practice-card__frequency p {
+  margin: 0 0 8px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: 480px;
+  }
+
+  .hero__content {
+    gap: 40px;
+  }
+
+  .hero__age-card {
+    width: 180px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-width {
+    width: min(calc(100% - 44px), var(--page-width));
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero__content {
+    align-items: flex-end;
+  }
+
+  .hero__copy {
+    text-align: center;
+  }
+
+  .hero__logo {
+    margin: 0 auto;
+  }
+
+  .hero__age-card {
+    position: absolute;
+    top: 40px;
+    right: 0;
+
+    width: 150px;
+    height: 155px;
+  }
+
+  .hero__age-card strong {
+    font-size: 4.4rem;
+  }
+
+  .program-intro {
+    padding-top: 48px;
+  }
+
+  .program-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+
+  .section-heading .eyebrow {
+    display: none;
+  }
+
+  .section-heading h2 {
+    margin: 0 auto;
+  }
+
+  .program-intro__copy {
+    max-width: 720px;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .development__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .development__header {
+    text-align: center;
+  }
+
+  .development__intro {
+    max-width: 680px;
+    margin: 4px auto 0;
+  }
+
+  .development__levels {
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .level-wrapper {
+    display: block;
+  }
+
+  .level-connector {
+    display: none;
+  }
+
+  .level-card {
+    min-height: 275px;
+    padding: 24px;
+  }
+
+  .level-card__letter {
+    font-size: 6.4rem;
+  }
+
+  .level-card__info h3 {
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+  }
+
+  .level-card__info p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-width {
+    width: min(calc(100% - 32px), var(--page-width));
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__background {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(4, 16, 36, 0.44) 0%,
+        rgba(4, 16, 36, 0.75) 44%,
+        rgba(4, 16, 36, 0.98) 100%
+      );
+
+    background-position: 58% center;
+  }
+
+  .hero__content {
+    align-items: flex-end;
+    padding-top: 145px;
+    padding-bottom: 40px;
+  }
+
+  .hero__copy {
+    width: 100%;
+  }
+
+  .hero__logo {
+    width: min(100%, 300px);
+  }
+
+  .hero__age-card {
+    top: 12px;
+    right: 0;
+
+    width: 128px;
+    height: 126px;
+  }
+
+  .hero__age-card strong {
+    font-size: 3.55rem;
+  }
+
+  .hero__age-label,
+  .hero__age-subtext {
+    font-size: 0.58rem;
+  }
+
+  .program-intro {
+    padding: 48px 0 82px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(3rem, 14vw, 4.3rem);
+  }
+
+  .program-intro__copy p {
+    font-size: 1.18rem;
+    line-height: 1.75;
+  }
+
+  .development {
+    padding: 77px 0 82px;
+  }
+
+  .development__title {
+    margin-bottom: 32px;
+    font-size: clamp(2.6rem, 11vw, 3.8rem);
+    white-space: normal;
+  }
+
+  .development__intro {
+    font-size: 1.14rem;
+  }
+
+  .development__levels {
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 46px;
+  }
+
+  .level-card {
+    min-height: 150px;
+    padding: 16px;
+  }
+
+  .level-card__letter {
+    font-size: 4.2rem;
+  }
+
+  .level-card__info h3 {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  .level-card__info p {
+    font-size: 0.75rem;
+  }
+
+  .development__practice {
+    padding-top: 48px;
+    margin-top: 48px;
+  }
+
+  .practice__heading h2 {
+    font-size: clamp(3rem, 14vw, 4.4rem);
+  }
+
+  .practice__cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 43px;
+  }
+
+  .practice-card {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-width {
+    width: min(calc(100% - 26px), var(--page-width));
+  }
+
+  .hero {
+    min-height: 360px;
+  }
+
+  .hero__logo {
+    width: min(100%, 220px);
+  }
+
+  .hero__age-card {
+    width: 112px;
+    height: 112px;
+  }
+
+  .hero__age-card strong {
+    font-size: 3.15rem;
+  }
+
+  .level-card {
+    min-height: 120px;
+    padding: 14px;
+  }
+
+  .level-card__letter {
+    font-size: 3.6rem;
+  }
+
+  .practice-card {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
