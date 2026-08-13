@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Footer";
 
 const DEVELOPMENT_LEVELS = [
   {
@@ -137,6 +138,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
