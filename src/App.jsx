@@ -31,10 +31,11 @@ function App() {
             />
           </div>
 
-          <div className="hero__age-card" aria-label="Program ages 6 through 8">
-            <span className="hero__age-label"></span>
-            <strong>6–8</strong>
-            <span className="hero__age-subtext">Years Old</span>
+          <div className="hero__image-frame hero__image-frame--in-hero">
+            <img
+              src={`${import.meta.env.BASE_URL}hero.jpg`}
+              alt="Mini Mites players on the ice"
+            />
           </div>
         </div>
 
@@ -50,9 +51,18 @@ function App() {
               Building the foundation
               <span>for what comes next.</span>
             </h2>
+
+            <div className="hero__image-frame hero__image-frame--in-intro">
+              <img
+                src={`${import.meta.env.BASE_URL}hero.jpg`}
+                alt="Mini Mites players on the ice"
+              />
+            </div>
           </div>
 
           <div className="program-intro__copy">
+            <p className="program-intro__excerpt">Ages 6 to 8</p>
+
             <p>
               The GSC Mites program will prepare our young players for
               high-level CHC competition, foster a strong sense of community,
