@@ -126,7 +126,7 @@ function App() {
                 <div className="practice-card__frequency">
                   <strong>
                     3<span> X </span>
-                    <em>/</em>
+                    <em></em>
                   </strong>
                   <p>week</p>
                 </div>
@@ -139,7 +139,7 @@ function App() {
                 <div className="practice-card__frequency">
                   <strong>
                     2<span> X </span>
-                    <em>/</em>
+                    <em></em>
                   </strong>
                   <p>week</p>
                 </div>
