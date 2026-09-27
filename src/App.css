@@ -257,261 +257,917 @@ a {
 }
 
 /* =========================================
-   DEVELOPMENT PATH
+   MINI MITES DEVELOPMENT
 ========================================= */
 
 .development {
   position: relative;
+
   padding: 100px 0;
+
   overflow: hidden;
-  background: var(--gsc-navy);
-  color: white;
+
+  background: var(--gsc-navy, #0d1240);
+  color: #ffffff;
 }
+
+/* -----------------------------------------
+   MAIN TITLE
+----------------------------------------- */
+
+.development__title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 58px;
+
+  color: #ffffff;
+
+  font-family:
+    "Bebas Neue",
+    Impact,
+    sans-serif;
+
+  font-size:
+    clamp(
+      3.8rem,
+      6vw,
+      5.4rem
+    );
+
+  font-weight: 400;
+
+  letter-spacing: 0.02em;
+
+  line-height: 0.92;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------------
+   TOP LAYOUT
+----------------------------------------- */
 
 .development__grid {
   position: relative;
   z-index: 1;
 
   display: grid;
-  grid-template-columns: minmax(340px, 1fr) minmax(320px, 1fr);
-  gap: 40px;
+
+  grid-template-columns:
+    minmax(320px, 0.95fr)
+    minmax(540px, 1.1fr);
+
   align-items: center;
+
+  gap:
+    clamp(
+      45px,
+      5vw,
+      80px
+    );
 }
 
-.development__title {
-  position: relative;
-  z-index: 1;
-
-  margin: 0 0 48px;
-
-  color: white;
-  font-size: clamp(1.35rem, 5.5vw, 5.4rem);
-  letter-spacing: 0.02em;
-  line-height: 0.92;
-  text-align: center;
-  white-space: nowrap;
-}
+/* -----------------------------------------
+   INTRO COPY
+----------------------------------------- */
 
 .development__header {
   text-align: right;
 }
 
 .development__intro {
-  max-width: 600px;
-  margin: 4px 0 0 auto;
+  max-width: 590px;
 
-  color: rgba(255, 255, 255, 0.67);
-  font-size: 1.23rem;
+  margin:
+    0
+    0
+    0
+    auto;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 1.18rem;
+  font-weight: 400;
+
   line-height: 1.75;
 }
 
+/* =========================================
+   SKATE / LEARN / PLAY
+========================================= */
+
 .development__levels {
   display: flex;
+
   align-items: stretch;
+
   gap: 8px;
 }
 
 .level-wrapper {
   display: flex;
+
   flex: 1;
+
   min-width: 0;
+
   align-items: center;
 }
+
+/* -----------------------------------------
+   STEP CARD
+----------------------------------------- */
 
 .level-card {
   position: relative;
 
   width: 100%;
-  min-height: 190px;
-  padding: 16px;
+  min-height: 205px;
+
+  padding: 20px 15px 18px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.035);
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
 
   transition:
-    transform 200ms ease,
-    background 200ms ease,
-    border-color 200ms ease;
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.level-card::before {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  content: "";
+
+  background:
+    var(
+      --gsc-red,
+      #e51837
+    );
+
+  transition:
+    width
+    280ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 }
 
 .level-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.29);
-  background: rgba(255, 255, 255, 0.065);
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  box-shadow:
+    0
+    18px
+    40px
+    rgba(
+      0,
+      0,
+      0,
+      0.13
+    );
 }
+
+.level-card:hover::before {
+  width: 100%;
+}
+
+/* -----------------------------------------
+   LARGE STEP WORD
+----------------------------------------- */
 
 .level-card__letter {
   flex: 1;
-  align-self: stretch;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  color: white;
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 4.6rem;
+  color: #ffffff;
+
+  font-family:
+    "Bebas Neue",
+    Impact,
+    sans-serif;
+
+  font-size:
+    clamp(
+      2.85rem,
+      3.6vw,
+      4.1rem
+    );
+
   font-weight: 400;
-  line-height: 0.8;
+
+  letter-spacing: 0.025em;
+
+  line-height: 0.85;
 }
 
-.level-wrapper:last-child .level-card__letter {
-  color: var(--gsc-red);
+/* Make PLAY the red destination */
+.level-card--accent
+.level-card__letter {
+  color:
+    var(
+      --gsc-red,
+      #e51837
+    );
 }
+
+/* -----------------------------------------
+   CARD DESCRIPTION
+----------------------------------------- */
 
 .level-card__info {
   text-align: center;
 }
 
 .level-card__info h3 {
-  margin: 0 0 4px;
+  margin:
+    0
+    0
+    5px;
 
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.025em;
+
+  line-height: 1.25;
+
   text-transform: uppercase;
 }
 
 .level-card__info p {
-  margin: 0;
+  max-width: 170px;
 
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.68rem;
-  font-weight: 600;
+  margin:
+    0
+    auto;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.52
+    );
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 0.66rem;
+
+  font-weight: 500;
+
+  line-height: 1.45;
 }
 
+/* -----------------------------------------
+   ARROWS BETWEEN CARDS
+----------------------------------------- */
+
 .level-connector {
-  width: 28px;
-  flex: 0 0 28px;
+  width: 30px;
+  flex: 0 0 30px;
 
   display: flex;
+
   align-items: center;
 }
 
 .level-connector span {
   height: 1px;
+
   flex: 1;
-  background: rgba(255, 255, 255, 0.23);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.23
+    );
 }
 
 .level-connector svg {
   width: 14px;
   height: 14px;
+
   margin-left: -1px;
 
   fill: none;
-  stroke: rgba(255, 255, 255, 0.5);
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.52
+    );
+
+  stroke-width: 1.4;
+
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.4;
 }
 
 /* =========================================
-   PRACTICE
+   WHAT PLAYERS DEVELOP
 ========================================= */
 
 .development__practice {
   position: relative;
   z-index: 1;
 
-  padding-top: 70px;
-  margin-top: 70px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin-top: 75px;
+
+  padding-top: 75px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
 }
+
+/* -----------------------------------------
+   SECTION HEADING
+----------------------------------------- */
 
 .practice__heading {
   text-align: center;
 }
 
 .practice__heading h2 {
-  color: white;
-  font-size: clamp(3.5rem, 6vw, 5.3rem);
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Bebas Neue",
+    Impact,
+    sans-serif;
+
+  font-size:
+    clamp(
+      3.6rem,
+      6vw,
+      5.3rem
+    );
+
+  font-weight: 400;
+
   letter-spacing: 0.02em;
+
   line-height: 0.9;
-}
 
-.practice__cards {
-  width: min(100%, 760px);
-  margin: 56px auto 0;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.practice-card {
-  padding: 32px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.035);
-
-  transition:
-    background 200ms ease,
-    border-color 200ms ease;
-}
-
-.practice-card:hover {
-  border-color: rgba(255, 255, 255, 0.29);
-  background: rgba(255, 255, 255, 0.065);
-}
-
-.practice-card__team {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.practice-card__frequency {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-}
+.practice__intro {
+  width:
+    min(
+      100%,
+      680px
+    );
 
-.practice-card__frequency strong {
-  color: white;
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 5.2rem;
+  margin:
+    21px
+    auto
+    0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.59
+    );
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 1rem;
+
   font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 0.8;
+
+  line-height: 1.7;
 }
 
-.practice-card__frequency strong span {
+/* =========================================
+   DEVELOPMENT CARDS
+========================================= */
+
+.practice__cards {
+  width:
+    min(
+      100%,
+      820px
+    );
+
+  margin:
+    54px
+    auto
+    0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 22px;
+}
+
+.practice-card {
   position: relative;
-  top: -0.22em;
 
-  color: var(--gsc-red);
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 0.5em;
+  min-height: 250px;
+
+  padding:
+    35px
+    34px
+    32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
 }
 
-.practice-card__frequency strong em {
-  margin-left: 2px;
+.practice-card::before {
+  position: absolute;
 
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+  top: 0;
+  left: 0;
+
+  width: 4px;
+  height: 100%;
+
+  content: "";
+
+  background:
+    var(
+      --gsc-red,
+      #e51837
+    );
+
+  transform:
+    scaleY(0.25);
+
+  transform-origin:
+    bottom;
+
+  transition:
+    transform
+    300ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 }
 
-.practice-card__frequency p {
-  margin: 0 0 8px;
+.practice-card:hover {
+  transform:
+    translateY(-5px);
 
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 2.4rem;
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.29
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  box-shadow:
+    0
+    20px
+    45px
+    rgba(
+      0,
+      0,
+      0,
+      0.14
+    );
+}
+
+.practice-card:hover::before {
+  transform:
+    scaleY(1);
+}
+
+
+/* -----------------------------------------
+   CARD CONTENT
+----------------------------------------- */
+
+.practice-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.practice-card__eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color:
+    var(
+      --gsc-red,
+      #e51837
+    );
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.practice-card h3 {
+  margin:
+    0
+    0
+    15px;
+
+  color: #ffffff;
+
+  font-family:
+    "Bebas Neue",
+    Impact,
+    sans-serif;
+
+  font-size:
+    clamp(
+      2.25rem,
+      3vw,
+      3rem
+    );
+
   font-weight: 400;
-  letter-spacing: 0.01em;
+
+  letter-spacing: 0.015em;
+
+  line-height: 0.95;
+
+  text-transform: uppercase;
+}
+
+.practice-card p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
+  font-size: 0.91rem;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .development__grid {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .development__header {
+    text-align: center;
+  }
+
+  .development__intro {
+    max-width: 720px;
+
+    margin:
+      0
+      auto;
+  }
+
+  .development__levels {
+    gap: 14px;
+  }
+
+  .level-wrapper {
+    display: block;
+  }
+
+  .level-connector {
+    display: none;
+  }
+
+  .level-card {
+    min-height: 245px;
+
+    padding: 24px 20px;
+  }
+
+  .level-card__letter {
+    font-size:
+      clamp(
+        3.4rem,
+        7vw,
+        5rem
+      );
+  }
+
+  .level-card__info h3 {
+    font-size: 0.9rem;
+  }
+
+  .level-card__info p {
+    font-size: 0.78rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .development {
+    padding:
+      76px
+      0
+      82px;
+  }
+
+  .development__title {
+    margin-bottom: 34px;
+
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4.1rem
+      );
+
+    white-space: normal;
+  }
+
+  .development__intro {
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+  }
+
+  .development__levels {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .level-card {
+    min-height: 165px;
+
+    padding:
+      21px
+      18px;
+  }
+
+  .level-card__letter {
+    font-size: 4rem;
+  }
+
+  .level-card__info h3 {
+    font-size: 0.82rem;
+  }
+
+  .level-card__info p {
+    max-width: 280px;
+
+    font-size: 0.73rem;
+  }
+
+  .development__practice {
+    margin-top: 52px;
+
+    padding-top: 53px;
+  }
+
+  .practice__heading h2 {
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4.25rem
+      );
+  }
+
+  .practice__intro {
+    margin-top: 17px;
+
+    font-size: 0.94rem;
+  }
+
+  .practice__cards {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    margin-top: 40px;
+  }
+
+  .practice-card {
+    min-height: 220px;
+
+    padding:
+      31px
+      27px
+      28px;
+  }
+
+  .practice-card h3 {
+    font-size: 2.5rem;
+  }
+
+  .practice-card p {
+    max-width: none;
+
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .development__title {
+    font-size: 3.05rem;
+  }
+
+  .development__intro {
+    font-size: 0.97rem;
+  }
+
+  .level-card {
+    min-height: 150px;
+  }
+
+  .level-card__letter {
+    font-size: 3.55rem;
+  }
+
+  .practice-card {
+    min-height: 210px;
+
+    padding:
+      28px
+      23px
+      25px;
+  }
+
+  .practice-card h3 {
+    font-size: 2.25rem;
+  }
 }
 
 /* =========================================
@@ -597,51 +1253,6 @@ a {
     padding-top: 0;
     text-align: center;
   }
-
-  .development__grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .development__header {
-    text-align: center;
-  }
-
-  .development__intro {
-    max-width: 680px;
-    margin: 4px auto 0;
-  }
-
-  .development__levels {
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  .level-wrapper {
-    display: block;
-  }
-
-  .level-connector {
-    display: none;
-  }
-
-  .level-card {
-    min-height: 275px;
-    padding: 24px;
-  }
-
-  .level-card__letter {
-    font-size: 6.4rem;
-  }
-
-  .level-card__info h3 {
-    font-size: 1.15rem;
-    letter-spacing: 0.08em;
-  }
-
-  .level-card__info p {
-    font-size: 0.98rem;
-  }
 }
 
 @media (max-width: 700px) {
@@ -696,64 +1307,6 @@ a {
     font-size: 1.18rem;
     line-height: 1.75;
   }
-
-  .development {
-    padding: 77px 0 82px;
-  }
-
-  .development__title {
-    margin-bottom: 32px;
-    font-size: clamp(2.6rem, 11vw, 3.8rem);
-    white-space: normal;
-  }
-
-  .development__intro {
-    font-size: 1.14rem;
-  }
-
-  .development__levels {
-    flex-direction: column;
-    gap: 13px;
-    margin-top: 46px;
-  }
-
-  .level-card {
-    min-height: 150px;
-    padding: 16px;
-  }
-
-  .level-card__letter {
-    font-size: 4.2rem;
-  }
-
-  .level-card__info h3 {
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-  }
-
-  .level-card__info p {
-    font-size: 0.75rem;
-  }
-
-  .development__practice {
-    padding-top: 48px;
-    margin-top: 48px;
-  }
-
-  .practice__heading h2 {
-    font-size: clamp(3rem, 14vw, 4.4rem);
-  }
-
-  .practice__cards {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 43px;
-  }
-
-  .practice-card {
-    align-items: center;
-    text-align: center;
-  }
 }
 
 @media (max-width: 420px) {
@@ -788,19 +1341,6 @@ a {
   .hero__image-frame::after {
     bottom: -9px;
     right: -9px;
-  }
-
-  .level-card {
-    min-height: 120px;
-    padding: 14px;
-  }
-
-  .level-card__letter {
-    font-size: 3.6rem;
-  }
-
-  .practice-card {
-    padding: 24px;
   }
 }
 

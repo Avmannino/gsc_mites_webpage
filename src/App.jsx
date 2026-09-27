@@ -1,21 +1,6 @@
 import "./App.css";
 import Footer from "./Footer";
 
-const DEVELOPMENT_LEVELS = [
-  {
-    level: "C",
-    year: "1st Year",
-  },
-  {
-    level: "B",
-    year: "2nd Year",
-  },
-  {
-    level: "A",
-    year: "3rd Year",
-  },
-];
-
 function App() {
   return (
     <main className="mites-page">
@@ -61,87 +46,183 @@ function App() {
           </div>
 
           <div className="program-intro__copy">
-            <p className="program-intro__excerpt">Ages 6 to 8</p>
+            <p className="program-intro__excerpt">Ages 3 to 8</p>
 
             <p>
-              The GSC Mites program will prepare our young players for
-              high-level CHC competition, foster a strong sense of community,
-              and develop a pipeline of skilled goaltenders. Our focus is on
-              accelerating player development, enhancing coaching quality, and
-              increasing on-ice engagement.
+              Mini Mites is a fun introductory hockey program for GSC members
+              ages 3-8 who can skate independently. Running from mid-November
+              through late February/early March at GSC, the program focuses on
+              skill development, confidence building, and having fun on the
+              ice.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="development">
+      {/* =========================================
+          MINI MITES DEVELOPMENT
+      ========================================= */}
+
+      <section
+        className="development"
+        aria-labelledby="development-title"
+      >
         <div className="page-width">
-          <h2 className="development__title">Growing Through The Game</h2>
+          <h2
+            className="development__title"
+            id="development-title"
+          >
+            Growing Through the Game
+          </h2>
+
+          {/* =====================================
+              SKATE / LEARN / PLAY
+          ===================================== */}
 
           <div className="development__grid">
             <div className="development__header">
               <p className="development__intro">
-                We structure our teams based on an experience-based model (C:
-                1st year, B: 2nd year, A: 3rd year), with flexibility for
-                player readiness and social dynamics in order to create a
-                clear developmental ladder for players to climb and progress
-                in preparation for Full Ice Travel Hockey.
+                Mini Mites is designed to help young players
+                build a strong foundation through
+                age-appropriate instruction, small-area games,
+                and plenty of time with the puck. The focus is
+                on developing skating, hockey skills,
+                confidence, and a love for the game in a fun
+                and supportive environment.
               </p>
             </div>
 
-            <div className="development__levels">
-              {DEVELOPMENT_LEVELS.map((item, index) => (
-                <div className="level-wrapper" key={item.level}>
-                  <article className="level-card">
-                    <div className="level-card__letter">{item.level}</div>
+            <div
+              className="development__levels"
+              aria-label="Mini Mites development focus"
+            >
+              {/* SKATE */}
+              <div className="level-wrapper">
+                <article className="level-card">
+                  <div className="level-card__letter">
+                    SKATE
+                  </div>
 
-                    <div className="level-card__info">
-                      <h3>{item.level} Team</h3>
-                      <p>{item.year}</p>
-                    </div>
-                  </article>
+                  <div className="level-card__info">
+                    <h3>Balance & Movement</h3>
 
-                  {index < DEVELOPMENT_LEVELS.length - 1 && (
-                    <div className="level-connector" aria-hidden="true">
-                      <span />
-                      <svg viewBox="0 0 20 20">
-                        <path d="m7 4 6 6-6 6" />
-                      </svg>
-                    </div>
-                  )}
+                    <p>
+                      Build comfort, control, and confidence
+                      on the ice.
+                    </p>
+                  </div>
+                </article>
+
+                <div
+                  className="level-connector"
+                  aria-hidden="true"
+                >
+                  <span />
+
+                  <svg viewBox="0 0 16 16">
+                    <path d="M5 3.5 10 8l-5 4.5" />
+                  </svg>
                 </div>
-              ))}
+              </div>
+
+              {/* LEARN */}
+              <div className="level-wrapper">
+                <article className="level-card">
+                  <div className="level-card__letter">
+                    LEARN
+                  </div>
+
+                  <div className="level-card__info">
+                    <h3>Puck Skills & Hockey Basics</h3>
+
+                    <p>
+                      Introduce stickhandling, passing,
+                      shooting, and game fundamentals.
+                    </p>
+                  </div>
+                </article>
+
+                <div
+                  className="level-connector"
+                  aria-hidden="true"
+                >
+                  <span />
+
+                  <svg viewBox="0 0 16 16">
+                    <path d="M5 3.5 10 8l-5 4.5" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* PLAY */}
+              <div className="level-wrapper">
+                <article className="level-card level-card--accent">
+                  <div className="level-card__letter">
+                    PLAY
+                  </div>
+
+                  <div className="level-card__info">
+                    <h3>Fun, Games & Teamwork</h3>
+
+                    <p>
+                      Put new skills into action while
+                      learning to play with teammates.
+                    </p>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
 
+          {/* =====================================
+              WHAT PLAYERS DEVELOP
+          ===================================== */}
+
           <div className="development__practice">
             <div className="practice__heading">
-              <h2>Practice structure</h2>
+              <h2>What Players Develop</h2>
+
+              <p className="practice__intro">
+                Mini Mites emphasizes the fundamental skills
+                and confidence young players need as they
+                begin learning the game.
+              </p>
             </div>
 
             <div className="practice__cards">
+              {/* SKATING & PUCK SKILLS */}
               <article className="practice-card">
-                <div className="practice-card__team">A Teams</div>
+                <div className="practice-card__content">
+                  <span className="practice-card__eyebrow">
+                    Foundation Skills
+                  </span>
 
-                <div className="practice-card__frequency">
-                  <strong>
-                    3<span> X </span>
-                    <em></em>
-                  </strong>
-                  <p>week</p>
+                  <h3>Skating & Puck Skills</h3>
+
+                  <p>
+                    Players work on balance, edge control,
+                    movement, puck handling, passing, and
+                    shooting fundamentals through
+                    age-appropriate drills and activities.
+                  </p>
                 </div>
-
               </article>
 
+              {/* CONFIDENCE & GAME SENSE */}
               <article className="practice-card">
-                <div className="practice-card__team">B &amp; C Teams</div>
+                <div className="practice-card__content">
+                  <span className="practice-card__eyebrow">
+                    Learning the Game
+                  </span>
 
-                <div className="practice-card__frequency">
-                  <strong>
-                    2<span> X </span>
-                    <em></em>
-                  </strong>
-                  <p>week</p>
+                  <h3>Confidence & Game Sense</h3>
+
+                  <p>
+                    Small-area games help players develop
+                    awareness, decision-making, teamwork,
+                    sportsmanship, and confidence in a fun,
+                    supportive environment.
+                  </p>
                 </div>
               </article>
             </div>
